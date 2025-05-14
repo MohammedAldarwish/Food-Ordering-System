@@ -92,7 +92,6 @@ A Django REST Framework backend for a food delivery application. It supports use
 
 1. Clone the repo:
    ```bash
-<<<<<<< HEAD
    git clone https://github.com/MohammedAldarwish/Food-Ordering-System.git
    cd Food-Ordering-System
    ```
