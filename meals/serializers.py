@@ -6,6 +6,7 @@ class MealsImageSerializer(serializers.ModelSerializer):
         model = MealsImages
         fields = ['id', 'image']
 
+<<<<<<< HEAD
 
 class MealSerializer(serializers.ModelSerializer):
     images = MealsImageSerializer(many=True, read_only=True)
@@ -18,6 +19,16 @@ class MealSerializer(serializers.ModelSerializer):
         read_only_fields = ['restaurant']  # Mark 'restaurant' as read-only
 
         
+=======
+class MealSerializer(serializers.ModelSerializer):
+    images = MealsImageSerializer(many=True, read_only=True)
+    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+    class Meta:
+        model = Meals
+        fields = ['restaurant', 'meal_name', 'meal_description', 'meal_price' ,'images', 'category']
+         
+
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
 class FavoriteSerializer(serializers.ModelSerializer):
     meal_id = serializers.PrimaryKeyRelatedField(
         queryset=Meals.objects.all(),

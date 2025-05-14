@@ -11,7 +11,10 @@ class Category(models.Model):
 
 
 User = get_user_model()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
 class Meals(models.Model):
     added_by = models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='meals')

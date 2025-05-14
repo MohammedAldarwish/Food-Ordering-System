@@ -9,6 +9,10 @@ class CartViewSet(viewsets.ViewSet):
 
     def list(self, request):
         cart, created = Cart.objects.get_or_create(user=request.user)
+<<<<<<< HEAD
+=======
+        # التأكد من وجود الـ Cart وتهيئة الـ serializer
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
         if created:
             return Response({"message": "Cart created successfully."}, status=status.HTTP_201_CREATED)
         serializer = CartSerializers(cart)
@@ -22,13 +26,21 @@ class CartItemViewSet(viewsets.ModelViewSet):
         cart, created = Cart.objects.get_or_create(user=self.request.user)
         if cart:
             return CartItem.objects.filter(cart=cart)
+<<<<<<< HEAD
         return CartItem.objects.none()  
+=======
+        return CartItem.objects.none()  # لو مافي Cart يرجع Empty Queryset
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
     
     def perform_create(self, serializer):
         cart, _ = Cart.objects.get_or_create(user=self.request.user)
         serializer.save(cart=cart)
 
     def destroy(self, request, *args, **kwargs):
+<<<<<<< HEAD
+=======
+        # لو كان فيه CartItem يتم مسحه بشكل صحيح
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
         try:
             cart_item = self.get_object()
             cart_item.delete()

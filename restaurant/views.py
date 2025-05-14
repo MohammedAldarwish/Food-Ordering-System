@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.forms import ValidationError
 from rest_framework import viewsets
 from .serializers import RestaurantSerializers
@@ -8,6 +9,16 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
+=======
+from rest_framework import viewsets
+from .serializers import RestaurantImageSerializers, RestaurantSerializers
+from .models import Restaurant, RestaurantImage
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework import status
+
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
 class RestaurantView(viewsets.ModelViewSet):
     queryset = Restaurant.objects.filter(is_approved=True)
     serializer_class = RestaurantSerializers
@@ -15,6 +26,7 @@ class RestaurantView(viewsets.ModelViewSet):
 
     
     def perform_create(self, serializer):
+<<<<<<< HEAD
         if Restaurant.objects.filter(user=self.request.user).exists():
             raise ValidationError('You can only create one restaurant.')
         serializer.save(user=self.request.user)
@@ -40,3 +52,7 @@ class RestaurantView(viewsets.ModelViewSet):
             return Response(serializer.errors, status=400)
         except Restaurant.DoesNotExist:
             return Response({"detail": "You don't have a restaurant to update."}, status=404)
+=======
+        serializer.save(user=self.request.user)
+
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416

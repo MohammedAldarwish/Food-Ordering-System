@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🍽️ Food Delivery API
 
 A Django REST Framework backend for a food delivery application. It supports user authentication, restaurant and meal management, favorites system, cart functionality, and order checkout.
@@ -117,3 +118,6 @@ A Django REST Framework backend for a food delivery application. It supports use
    cd food-delivery-api
    ````
 >>>>>>> 0ca103963e7b3e5ff6ef19ccd2d06e2173fba070
+=======
+# Food-Ordering-System
+>>>>>>> 384d072cae553316b277c547a712ba2176ce2416
